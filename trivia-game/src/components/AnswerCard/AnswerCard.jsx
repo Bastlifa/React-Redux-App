@@ -1,11 +1,15 @@
 import React from "react"
 import { useDispatch } from 'react-redux'
+const Entities = require('html-entities').XmlEntities
 
 const AnswerCard = (props) =>
 {
-    const {  } = props
+    const entities = new Entities()
+    const { answer } = props
     return (
-        <div></div>
+        <div className="answer-card">
+            {entities.decode(answer)}
+        </div>
     )
 }
 

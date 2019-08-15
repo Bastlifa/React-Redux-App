@@ -1,5 +1,6 @@
 import React from "react"
 import {useSelector, useDispatch} from 'react-redux'
+import {getTrivia} from '../../actions'
 
 const Header = () =>
 {
@@ -17,6 +18,7 @@ const Header = () =>
                     <option value="general">General</option>
                     <option value="general">General</option>
                 </select>
+                <button onClick={_ => dispatch(getTrivia())}>Start Game</button>
             </div>
         </>
     )

@@ -1,9 +1,10 @@
 import React from "react"
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
 import AnswerCards from '../AnswerCards/AnswerCards'
 import QuestionCard from '../QuestionCard/QuestionCard'
 import LoadingScreen from '../LoadingScreen/LoadingScreen'
 import LandingPage from '../LandingPage/LandingPage'
+import GameComplete from '../GameComplete/GameComplete'
 
 const GameContainer = () =>
 {
@@ -17,12 +18,16 @@ const GameContainer = () =>
             (
                 state.trivia.length > 0 ?
                 (
-                    <>
-                        <QuestionCard />
-                        <AnswerCards />
-                    </>
+                    state.isFinished ?
+                    (<GameComplete />) :
+                    (
+                        <>
+                            <QuestionCard />
+                            <AnswerCards />
+                        </>
+                    )
                 ) :
-                ()
+                (<LandingPage />)
             )
             }
         </div>
