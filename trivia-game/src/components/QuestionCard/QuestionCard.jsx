@@ -1,17 +1,16 @@
 import React from "react"
 import {useSelector} from 'react-redux'
 import { QuestionCardDiv } from './QuestionCardStyles'
-const Entities = require('html-entities').XmlEntities
+const he = require("he")
 
 const QuestionCard = () =>
 {
-    const entities = new Entities()
     const state = useSelector(state => state)
     let questionObj = state.trivia[state.currentQuestion]
     return (
         <QuestionCardDiv>
-            <h3>Category: {entities.decode(questionObj.category)}</h3>
-            <h3>Question: {entities.decode(questionObj.question)}</h3>
+            <h3>Category: {he.decode(questionObj.category)}</h3>
+            <h3>Question: {he.decode(questionObj.question)}</h3>
         </QuestionCardDiv>
     )
 }
