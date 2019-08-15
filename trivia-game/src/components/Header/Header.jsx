@@ -8,7 +8,7 @@ const Header = () =>
     const state = useSelector(state => state)
     return (
         <>
-            <h1>Bast's Trivia Challenge!</h1>
+            <h1>Eli's Trivia Challenge!</h1>
             <div className="subheader">
                 <h3>Score: {`${state.score}/10`}</h3>
                 <select>
