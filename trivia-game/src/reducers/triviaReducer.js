@@ -19,7 +19,9 @@ export const reducer = (state = initialState, action)  =>
                 ...state,
                 isFetching: true,
                 error: "",
-                isFinished: false
+                isFinished: false,
+                currentQuestion: 0,
+                score: 0
             }
         case FETCH_TRIVIA_SUCCESS:
             console.log('trivia',state.trivia)

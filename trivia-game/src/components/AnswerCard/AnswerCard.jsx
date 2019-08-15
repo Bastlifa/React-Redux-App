@@ -10,7 +10,7 @@ const AnswerCard = (props) =>
     const { answer } = props
     return (
         <div className="answer-card" onClick={_ => dispatch(answerTrivia(answer))}>
-            {entities.decode(answer)}
+            <h3>{entities.decode(answer)}</h3>
         </div>
     )
 }

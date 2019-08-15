@@ -5,6 +5,7 @@ import QuestionCard from '../QuestionCard/QuestionCard'
 import LoadingScreen from '../LoadingScreen/LoadingScreen'
 import LandingPage from '../LandingPage/LandingPage'
 import GameComplete from '../GameComplete/GameComplete'
+import { GameContainerDiv, CenteringDiv } from './GameContainerStyles'
 
 const GameContainer = () =>
 {
@@ -12,25 +13,27 @@ const GameContainer = () =>
     const dispatch = useDispatch()
 
     return (
-        <div className="game-container">
-            {state.isFetching ?
-            (<LoadingScreen />) :
-            (
-                state.trivia.length > 0 ?
+        <GameContainerDiv>
+            <CenteringDiv>
+                {state.isFetching ?
+                (<LoadingScreen />) :
                 (
-                    state.isFinished ?
-                    (<GameComplete />) :
+                    state.trivia.length > 0 ?
                     (
-                        <>
-                            <QuestionCard />
-                            <AnswerCards />
-                        </>
-                    )
-                ) :
-                (<LandingPage />)
-            )
-            }
-        </div>
+                        state.isFinished ?
+                        (<GameComplete />) :
+                        (
+                            <>
+                                <QuestionCard />
+                                <AnswerCards />
+                            </>
+                        )
+                    ) :
+                    (<LandingPage />)
+                )
+                }
+            </CenteringDiv>
+        </GameContainerDiv>
     )
 }
 
