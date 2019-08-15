@@ -4,11 +4,11 @@ export const FETCH_TRIVIA_SUCCESS = "FETCH_TRIVIA_SUCCESS"
 export const FETCH_TRIVIA_FAIL = "FETCH_TRIVIA_FAIL"
 export const CLICK_TRIVIA_ANSWER = "CLICK_TRIVIA_ANSWER"
 
-export const getTrivia = _ => dispatch =>
+export const getTrivia = category => dispatch =>
 {
     dispatch({ type: FETCH_TRIVIA_START })
     axios
-        .get('https://opentdb.com/api.php?amount=10')
+        .get(`https://opentdb.com/api.php?amount=10&category=${category}`)
         .then(res =>
             {
                 console.log("a", res.data.results)

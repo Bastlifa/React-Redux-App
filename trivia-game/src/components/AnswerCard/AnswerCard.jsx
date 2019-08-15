@@ -1,6 +1,7 @@
 import React from "react"
 import { useDispatch } from 'react-redux'
 import { answerTrivia } from '../../actions'
+import { AnswerCardDiv } from './AnswerCardStyles'
 const Entities = require('html-entities').XmlEntities
 
 const AnswerCard = (props) =>
@@ -9,9 +10,9 @@ const AnswerCard = (props) =>
     const entities = new Entities()
     const { answer } = props
     return (
-        <div className="answer-card" onClick={_ => dispatch(answerTrivia(answer))}>
+        <AnswerCardDiv onClick={_ => dispatch(answerTrivia(answer))}>
             <h3>{entities.decode(answer)}</h3>
-        </div>
+        </AnswerCardDiv>
     )
 }
 

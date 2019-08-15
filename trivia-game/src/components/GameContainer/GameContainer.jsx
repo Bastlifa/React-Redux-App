@@ -1,5 +1,5 @@
 import React from "react"
-import { useSelector, useDispatch } from 'react-redux'
+import { useSelector } from 'react-redux'
 import AnswerCards from '../AnswerCards/AnswerCards'
 import QuestionCard from '../QuestionCard/QuestionCard'
 import LoadingScreen from '../LoadingScreen/LoadingScreen'
@@ -10,7 +10,6 @@ import { GameContainerDiv, CenteringDiv } from './GameContainerStyles'
 const GameContainer = () =>
 {
     const state = useSelector(state => state)
-    const dispatch = useDispatch()
 
     return (
         <GameContainerDiv>
