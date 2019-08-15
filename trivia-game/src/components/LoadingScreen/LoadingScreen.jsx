@@ -1,9 +1,9 @@
 import React from "react"
-
+import Loader from "react-loader-spinner"
 const LoadingScreen = () =>
 {
     return (
-        <div></div>
+        <Loader type="TailSpin" color="#00BFFF" height={200} width={200} />
     )
 }
 
