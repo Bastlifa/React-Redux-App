@@ -7,9 +7,7 @@ const QuestionCard = () =>
 {
     const entities = new Entities()
     const state = useSelector(state => state)
-    console.log('state from QC', state)
     let questionObj = state.trivia[state.currentQuestion]
-    console.log('qo', questionObj)
     return (
         <QuestionCardDiv>
             <h3>Category: {entities.decode(questionObj.category)}</h3>

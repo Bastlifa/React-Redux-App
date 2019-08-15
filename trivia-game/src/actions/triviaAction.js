@@ -11,7 +11,6 @@ export const getTrivia = category => dispatch =>
         .get(`https://opentdb.com/api.php?amount=10&category=${category}`)
         .then(res =>
             {
-                console.log("a", res.data.results)
                 dispatch({ type: FETCH_TRIVIA_SUCCESS, payload: res.data.results })    
             }
         )

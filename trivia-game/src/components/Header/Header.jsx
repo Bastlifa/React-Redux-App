@@ -9,7 +9,6 @@ const Header = () =>
     const handleSelect = e =>
     {
         setCategory(e.target.value)
-        console.log(category)
     }
     const dispatch = useDispatch()
     const state = useSelector(state => state)

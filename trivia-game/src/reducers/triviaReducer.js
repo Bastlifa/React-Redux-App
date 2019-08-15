@@ -12,7 +12,6 @@ const initialState =
 
 export const reducer = (state = initialState, action)  =>
 {
-    console.log("reducer", action)
     switch (action.type) {
         case FETCH_TRIVIA_START:
             return {
@@ -24,7 +23,6 @@ export const reducer = (state = initialState, action)  =>
                 score: 0
             }
         case FETCH_TRIVIA_SUCCESS:
-            console.log('trivia',state.trivia)
             return {
                 ...state,
                 trivia: action.payload,
