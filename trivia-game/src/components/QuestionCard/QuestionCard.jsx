@@ -14,3 +14,5 @@ const QuestionCard = () =>
         </QuestionCardDiv>
     )
 }
+
+export default QuestionCard
