@@ -15,7 +15,7 @@ const Header = () =>
     return (
         <HeaderDiv>
             <h1>Eli's Trivia Challenge!</h1>
-            <SubHeaderDiv className="subheader">
+            <SubHeaderDiv>
                 <h3>Score: {`${state.score}/10`}</h3>
                 <select onChange={handleSelect} value={category}>
                     <option value="">All</option>
