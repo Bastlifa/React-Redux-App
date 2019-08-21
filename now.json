@@ -1,8 +1,8 @@
 {
     "version": 2,
     "name": "Trivia-Game",
-    "builds": [{ "src": "React-Redux-App/trivia-game/package.json", "use": "@now/static-build", "config": {"distDir": "/trivia-game/build"} }],
+    "builds": [{ "src": "trivia-game/package.json", "use": "@now/static-build", "config": {"distDir": "public"} }],
     "routes": [
-        { "src": "/(.*)", "dest": "React-Redux-App/trivia-game/$1" }
+        { "src": "/(.*)", "dest": "trivia-game/$1" }
     ]
 }
